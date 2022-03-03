@@ -1,0 +1,50 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#box-t{
+    border: 1px solid lightblue;
+    align:center;
+    width: 300px;
+    height: 100px;
+    margin: 0px auto;
+    margin-top: 10%;
+}
+
+.right{
+    background: url("../images/1.png") no-repeat 5px center;
+    /*不重复 x轴5px y轴居中*/
+    background-size: 15px 15px;
+    color: green;!important;
+    font-size: 15px;
+    text-align: center;
+    padding-left: 20px;
+}
+.error{
+    background: url("../images/2.png") no-repeat 5px center;
+    background-size: 15px 15px;
+    color: red;!important;
+    font-size: 15px;
+    text-align: center;
+    padding-left: 20px;
+}
+.zero{
+    color: darkgray;!important;
+    font-size: 15px;
+    text-align: center;
+}
+img{
+    width: 15px;
+    height: 15px;
+    margin: auto;
+}
+label{
+    color: darkgray;
+}
+button{
+    align-content: center;
+}
+input{
+    border-radius: 5px;
+    align-content: center;
+}
