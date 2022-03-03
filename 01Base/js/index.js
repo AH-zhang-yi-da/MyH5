@@ -29,7 +29,23 @@ $("name").onfocus = function(){
 //input number输入框失去焦点
 $("number").onblur = function (){
     var value = this.value;
-
+    if (numbersyn(value) && value.length == 11){
+        $("tiShi2").className = "right";
+        $("tiShi2").innerHTML = "";
+    }else if (numbersyn(value) && value.length != 11){
+        $("tiShi2").className = "error";
+        $("tiShi2").innerHTML = "请输入11位学号";
+    }
+    else {
+        $("tiShi2").className = "error";
+        $("tiShi2").innerHTML = "请输入正确的学号";
+    }
+}
+//input number输入框得到焦点
+$("number").onfocus = function (){
+    $("tiShi2").className = "zero";
+    $("tiShi2").innerHTML = "学号";
+    $("number").value = "";
 }
 //判断字符串中是否含有数字 返回值 T or F
 function numberyn(a){
@@ -44,12 +60,24 @@ function numberyn(a){
 }
 //判断字符串中是否都是数字
 function numbersyn (a){
-    for (let i = 0; i < a.length-1; i++) {
-
+    var a;
+    for (var i = 0; i <= a.length-1; i++) {
+        if (isNaN(a[i])){
+            return false;
+            break;
+        }
+    }
+    if (i == a.length){
+        return true;
     }
 }
+//打印出格式正确的名字加学号
 function jiancha(){
-    var m = document.getElementById("name").value;//名字
-    var x = document.getElementById("number").value;//学号
-
+    if ($("tiShi1").className == "right" && $("tiShi2").className == "right"){
+        var a = $("name").value;
+        var b = $("number").value;
+        $("daYin").innerHTML ="姓名： "+a+"  "+"学号： "+b;
+    }else {
+        $("daYin").innerHTML ="error";
+    }
 }
